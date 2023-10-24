@@ -10,18 +10,19 @@ run via:
 ./Schedule
 ./Process <user_process_name> <file_name>
 
-Scheduler
-
+Scheduler:
 The Scheduler is a single instance program responsible for managing a 512KB main memory, divided into 1000 frames, each of size 512 bytes. This memory is allocated for User processes' pages.
 
 The Scheduler is non-interactive and serves as the memory management backend.
-User Process
 
+
+User Process:
 User processes are interactive and can have multiple instances. When a User process starts, it reads a text file, considering it as its executable image. The file is divided into pages, each 512 bytes in size. The file size determines the size of the process's page table. For example, a 32KB file will result in a page table of 64 pages.
 
 User processes run in an infinite loop, continually interacting with the Scheduler. The program accepts two command line parameters: Process name and the name of the text file to be processed.
-Expected Workflow
 
+
+Expected Workflow:
 1.    When a User process starts, it sends its process name and the content of the text file to the Scheduler.
 2.    The Scheduler creates a page table and allocates memory frames for the User process based on the page table's size.
 3.    The User process no longer needs the text file after this initialization.
